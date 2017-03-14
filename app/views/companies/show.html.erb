@@ -1,9 +1,26 @@
-
-
 <p>
   <strong>Name:</strong>
   <%= @company.name %>
 </p>
 
-<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= form_for([@company, @complain],remote: true) do |f| %>
+	<%= f.label :description, "Comentar" %> <br>
+	<%= f.text_area :description %><br>
+	<%= f.submit "Enviar queja"%>
+<% end %>
+
+<h2>Quejas - Complains</h2>
+
+<ul>
+	<% @complains.each do |complain| %>
+	<% unless complain.id.nil? %>
+		<%= render 'show_complains', complain: complain %>	
+	<% end %>
+	<% end %>
+</ul>
+<p>
+
+
+
+
 <%= link_to 'Back', companies_path %>

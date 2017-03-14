@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+Complain.delete_all
 Company.delete_all
 5.times do |i|
 	Company.create(name:"Company #{i}")
