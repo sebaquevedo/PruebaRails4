@@ -1,0 +1,8 @@
+
+$("tbody").prepend("<tr>\
+<td> <%= @company.name %></td>\
+<td><%= j link_to 'Show', @company %></td>\
+<td><%= j render 'shared/edit',company: @company %></td>\
+<td><%= j link_to 'Destroy', @company, method: :delete, data: {confirm: 'Are you sure?'} %>\
+</td>\
+</tr>");
